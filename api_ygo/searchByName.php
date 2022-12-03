@@ -1,5 +1,6 @@
 <?php
     $name = $_GET["name"];
+    if(isset($_GET["type"])) $type = $_GET["type"];
     $dataFile = fopen("./data/ygo.txt", "r");
     $dataString = fread($dataFile, filesize("./data/ygo.txt"));
     $decodedData = json_decode($dataString, true);
@@ -12,7 +13,8 @@
             if($keyCount == 0) $num = array_keys($cards);
             //get information of each card here.
             if(is_array($value)) {
-                if(strpos($value["name"], $name) !== false) {
+                // if(strpos($value["name"], $name) !== false) {
+                if(strpos($value["name"], $name) !== false && $value["type"] == $type) {
                     foreach($value as $key2 => $value2) {
                         if(is_array($value2)) {
                             foreach($value2 as $key3 => $value3) {

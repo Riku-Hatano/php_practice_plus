@@ -10,10 +10,11 @@
     <form action="searchByName.php" method="GET">
         <input type="text" name="name">
         <input type="submit" value="search">
-    </form>
-    <form action="searchByAttribute" method="GET">
-        <select name="attribute">
-            <option value=""></option>
+        <select name="type">
+            <option value="disabled" selected disabled>Select Card Type</option>
+            <option value="Effect Monster">Effect Monster</option>
+            <option value="Flip Effect Monster">Flip Effect Monster</option>
+            <option value="flip_tuner_monster">Flip Tuner Monster</option>
         </select>
     </form>
 </body>
