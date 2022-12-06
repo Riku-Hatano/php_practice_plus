@@ -18,7 +18,7 @@
         );
 
         $context = stream_context_create($options);
-        $raw_data = file_get_contents($url, false, $context);
+        $raw_data = file_get_contents($url, false, $context);//file_get_contentsは第一引数に指定したパスから文字列を読み取る。第三引数はstream_context_createで作ったコンテキストリソースを指定する。
         $data = json_decode($raw_data, true);
 
         echo "<table>";
