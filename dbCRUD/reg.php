@@ -7,16 +7,15 @@
         $tbName = 'test1';
 
         $dbcon = new mysqli('localhost', 'root', '', 'test_db');
-        // $cmd = "INSERT INTO $tbName (fname, lname, email, pass) VALUES ('riku', 'hatano', 'lutianye@com', '0822adgj')";
         $cmd = "INSERT INTO $tbName (fname, lname, email, pass) VALUES ('$fname', '$lname', '$email', '$pass')";
         $dbcon -> query($cmd);
         
-
+        
         $return = $dbcon -> query("SELECT * FROM $tbName");
-        // var_dump($return);
         $returns = $return -> fetch_all();
-
-        var_dump($returns);
+        
+        print_r($returns);
+        header("Location: ./index.php");
     }
 ?>
 
@@ -32,15 +31,16 @@
     </thead>
     <tbody>
         <?php
-            foreach ($return as $eachReturn) {
-                echo "<tr>";
-                    echo "<td>".$eachReturn['id']."</td>";
-                    echo "<td>".$eachReturn['fname']."</td>";
-                    echo "<td>".$eachReturn['lname']."</td>";
-                    echo "<td>".$eachReturn['email']."</td>";
-                    echo "<td>".$eachReturn['pass']."</td>";
-                echo "</tr>";
-            }
+            // foreach ($return as $eachReturn) {
+            //     echo "<tr>";
+            //         echo "<td><a href=' ".$_SERVER['PHP_SELF']."?changeInfo=id '>".$eachReturn['id']."</td>";
+            //         echo "<td><a href=' ".$_SERVER['PHP_SELF']."?changeInfo=fname '>".$eachReturn['fname']."</td>";
+            //         echo "<td><a href=' ".$_SERVER['PHP_SELF']."?changeInfo=lname '>".$eachReturn['lname']."</td>";
+            //         echo "<td><a href=' ".$_SERVER['PHP_SELF']."?changeInfo=email '>".$eachReturn['email']."</td>";
+            //         echo "<td><a href=' ".$_SERVER['PHP_SELF']."?changeInfo=pass '>".$eachReturn['pass']."</td>";
+            //     echo "</tr>";
+            // }
+            // $dbcon -> close();
         ?>
     </tbody>
 </table>
