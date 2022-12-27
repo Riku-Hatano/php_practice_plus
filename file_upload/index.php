@@ -23,7 +23,9 @@
             fwrite($fileData, json_encode($mainArray));
             fclose($fileData);
         } else if ($result == true && file_exists("./imgPaths/paths.txt") == true) {
-            echo "done";
+            // echo $infoPic["uploadedPicture"];
+            // print_r($infoPic["uploadedPicture"]);
+            echo pathinfo($infoPic["uploadedPicture"]["name"], PATHINFO_FILENAME);
             $fileData = fopen("./imgPaths/paths.txt", "r");
             $stringData = fread($fileData, filesize("./imgPaths/paths.txt"));
             $mainArray = json_decode($stringData, true);

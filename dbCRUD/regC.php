@@ -5,6 +5,7 @@
         $comments = $_POST['comments'];
 
         $dbcon = new mysqli('localhost', 'root', '', 'test_db');
+        
         $cmd = "INSERT INTO test2 (cName, rName, comments) VALUES ('$cName', '$rName', '$comments')";
         $dbcon -> query($cmd);
         header("Location: index.php");

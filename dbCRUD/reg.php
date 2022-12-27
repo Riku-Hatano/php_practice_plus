@@ -4,10 +4,11 @@
         $lname = $_POST['lname'];
         $email = $_POST['email'];
         $pass = $_POST['pass'];
+        $cNum = $_POST['cNum'];
         $tbName = 'test1';
 
         $dbcon = new mysqli('localhost', 'root', '', 'test_db');
-        $cmd = "INSERT INTO $tbName (fname, lname, email, pass) VALUES ('$fname', '$lname', '$email', '$pass')";
+        $cmd = "INSERT INTO $tbName (fname, lname, email, pass, cNum) VALUES ('$fname', '$lname', '$email', '$pass', '$cNum')";
         $dbcon -> query($cmd);
         
         
@@ -27,6 +28,7 @@
             <th>lname</th>
             <th>email</th>
             <th>pass</th>
+            <th>cnum</th>
         </tr>
     </thead>
     <tbody>

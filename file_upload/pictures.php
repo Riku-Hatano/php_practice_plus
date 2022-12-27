@@ -11,7 +11,7 @@
         $fileData = fopen("./imgPaths/paths.txt", "r");
         $pathString = fread($fileData, filesize("./imgPaths/paths.txt"));
         $decodedString = json_decode($pathString, true);
-        print_r($decodedString);
+        echo filesize("./imgPaths/paths.txt");
         foreach($decodedString as $path) {
             $src = "./img/".$path["uploadedPicture"]["name"];
             echo "<img src='$src'>";

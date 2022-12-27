@@ -26,6 +26,7 @@
         <input type="text" name="lname" placeholder="lname">
         <input type="email" name="email" placeholder="email">
         <input type="password" name="pass" placeholder="pass">
+        <input type="number" name="cNum" placeholder="class number">
         <input type="submit" value="submit">
     </form>
     <form action="./regC.php" method="POST">
@@ -45,6 +46,7 @@
                 <th>full name</th>
                 <th>email</th>
                 <th>password</th>
+                <th>cnum</th>
             </tr>
         </thead>
         <tbody>
@@ -55,6 +57,7 @@
                         echo "<td><a href=' ".$_SERVER['PHP_SELF']."?changeInfo=fname '>".$eachData[0]." ".$eachData[1]."</td>";
                         echo "<td><a href=' ".$_SERVER['PHP_SELF']."?changeInfo=email '>".$eachData[2]."</td>";
                         echo "<td><a href=' ".$_SERVER['PHP_SELF']."?changeInfo=pass '>".$eachData[3]."</td>";
+                        echo "<td><a href=' ".$_SERVER['PHP_SELF']."?changeInfo=pass '>".$eachData[5]."</td>";
                     echo "</tr>";
                 }
             ?>
